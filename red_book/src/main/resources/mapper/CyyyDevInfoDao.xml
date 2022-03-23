@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.threeclear.pollution.dao.CyyyDevInfoDao">
+
+    <!--    查询餐饮油烟报警信息-->
+    <select id="selectDataByTime"  resultType="com.threeclear.pollution.vo.CookingFumeDataVo" parameterType="java.util.Map">
+        SELECT
+               c2.id,
+               c1.address,
+               c1.corpname,
+               c1.number,
+               c1.countyname,
+               c1.countycode,
+               c2.update_time2,
+               c2.v4x10,
+               c2.v4x11,
+               c2.v4x12,
+               c2.v0x1,
+               c2.v0x2,
+               c2.alarm_detail,
+               COALESCE(pp.status,'待处置') status,
+               pp.disposaluser,
+               pp.description,
+               pp.remove_time removeTime
+        from cyyy_dev_info c1
+            LEFT join cyyy_dev_data c2 on c1.id = c2.device_id
+        LEFT JOIN pollute_police pp ON c2.id = pp.pk_id
+        <where>
+            <if test="corpname!=null and corpname!=''">
+                and c1.corpname like CONCAT('%', #{corpname},'%')
+            </if>
+            <if test="region!=null and region!=''">
+                and c1.countycode = #{region}
+            </if>
+            <if test="startTime!=null">
+                and <![CDATA[  c2.update_time2 >= #{startTime} ]]>
+            </if>
+            <if test="endTime!=null">
+                and <![CDATA[  c2.update_time2 <= #{endTime} ]]>
+            </if>
+            <if test="statuses != null and statuses.size()>0">
+                and COALESCE(pp."status",'待处置') in
+                <foreach collection="statuses" item="item" open="(" close=")" separator=",">
+                    #{item}
+                </foreach>
+            </if>
+                and c2.alarm != 0
+        </where>
+        order by c2.update_time2
+        LIMIT #{pageSize} OFFSET #{pageNum}
+    </select>
+
+    <select id="selectTotalByData"  resultType="java.lang.Integer" parameterType="java.util.Map">
+        SELECT
+            count(*)
+        from cyyy_dev_info c1
+        LEFT join cyyy_dev_data c2 on c1.id = c2.device_id
+        LEFT JOIN pollute_police pp ON c2.id = pp.pk_id
+        <where>
+            <if test="corpname!=null and corpname!=''">
+                and c1.corpname like CONCAT('%', #{corpname},'%')
+            </if>
+            <if test="region!=null and region!=''">
+                and c1.countycode = #{region}
+            </if>
+            <if test="startTime!=null">
+                and <![CDATA[  c2.update_time2 >= #{startTime} ]]>
+            </if>
+            <if test="endTime!=null">
+                and <![CDATA[  c2.update_time2 <= #{endTime} ]]>
+            </if>
+            <if test="statuses != null and statuses.size()>0">
+                and COALESCE(pp."status",'待处置') in
+                <foreach collection="statuses" item="item" open="(" close=")" separator=",">
+                    #{item}
+                </foreach>
+            </if>
+                and c2.alarm != 0
+        </where>
+    </select>
+
+</mapper>
+

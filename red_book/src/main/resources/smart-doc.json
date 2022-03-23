@@ -1,0 +1,124 @@
+{
+  "outPath": "D:\\接口文档",
+  "serverUrl": "http://10.150.18.74",
+  "isStrict": false,
+  "tornaDebug": true,
+  "allInOne": true,
+  "projectName": "张家口冬奥保障项目",
+  "appKey": "20210531848975623878606848",
+  "appToken": "ae10296a8c9f4ee2bd9293abaa942456",
+  "secret": "Ul0Ol<WpF&!IZRUj8#^xH8kKw.k$,O2d",
+  "openUrl": "http://10.150.18.74:7700/api",
+  "debugEnvUrl": "http://10.150.18.74",
+  "customResponseFields": [
+    {
+      "name": "orders",
+      "ownerClassName": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+      "required": false,
+      "ignore": true
+    }
+    ,{
+      "name": "optimizeCountSql",
+      "ownerClassName": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+      "required": false,
+      "ignore": true
+    }
+    ,{
+      "name": "countId",
+      "ownerClassName": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+      "required": false,
+      "ignore": true
+    }
+    ,{
+      "name": "maxLimit",
+      "ownerClassName": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+      "required": false,
+      "ignore": true
+    }
+    ,{
+      "name": "pages",
+      "ownerClassName": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+      "required": false,
+      "ignore": true
+    }
+    ,{
+      "name": "searchCount",
+      "ownerClassName": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+      "required": false,
+      "ignore": true
+    }
+  ],
+  "customRequestFields": [
+    {
+      "name": "records",
+      "ownerClassName": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+      "required": false,
+      "ignore": true
+    },
+    {
+          "name": "orders",
+          "ownerClassName": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+          "required": false,
+          "ignore": true
+        },
+    {
+      "name": "searchCount",
+      "ownerClassName": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+      "required": false,
+      "ignore": true
+    },
+    {
+      "name": "pages",
+      "ownerClassName": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+      "required": false,
+      "ignore": true
+    },
+    {
+      "name": "hitCount",
+      "ownerClassName": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+      "required": false,
+      "ignore": true
+    },
+    {
+      "name": "optimizeCountSql",
+      "ownerClassName": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+      "required": false,
+      "ignore": true
+    },
+    {
+      "name": "isSearchCount",
+      "ownerClassName": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+      "required": false,
+      "ignore": true
+    },
+    {
+      "name": "maxLimit",
+      "ownerClassName": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+      "required": false,
+      "ignore": true
+    },
+    {
+      "name": "countId",
+      "ownerClassName": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+      "required": false,
+      "ignore": true
+    }
+  ],
+  "customResponseFields": [
+    {
+      "name": "msg",
+      "desc": "响应消息",
+      "ownerClassName": "com.threeclear.baseweb.vo.ServerResponse"
+    },
+    {
+      "name": "status",
+      "desc": "200:访问成功,401:没有权限,500:发生错误",
+      "ownerClassName": "com.threeclear.baseweb.vo.ServerResponse"
+    },
+    {
+      "name": "data",
+      "desc": "响应数据",
+      "ownerClassName": "com.threeclear.baseweb.vo.ServerResponse"
+    }
+  ]
+}

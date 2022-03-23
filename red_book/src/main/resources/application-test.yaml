@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://10.110.18.223:54320/abc
+    username: postgres
+    password: Aa123456
+    driver-class-name: org.postgresql.Driver
+  #配置时间格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  #修改默认上传文件大小设置
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 1200MB
+server:
+  port: 8850
+logging:
+  level:
+    com:
+      threeclear:
+        emergency:
+          dao: debug
+mybatis-plus:
+  global-config:
+    db-config:
+      select-strategy: not_empty
+
+#应急演练文件路径
+emergency_drill-file-path:
+  file-dir: C:\Users\wulid\Desktop\test\
+
+
+
+
+
