@@ -1,9 +1,13 @@
 spring:
   datasource:
-    url: jdbc:postgresql://10.80.6.6:54321/pollution
-    username: postgres
-    password: 2hxPic$pGd7SWT8P
-    driver-class-name: org.postgresql.Driver
+    url:
+    username:
+    password:
+    driver-class-name:
+    #url: jdbc:postgresql://10.80.6.6:54321/pollution
+    #username: postgres
+    #password: 2hxPic$pGd7SWT8P
+    #driver-class-name: org.postgresql.Driver
   #配置时间格式
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
